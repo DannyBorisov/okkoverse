@@ -30,3 +30,10 @@ model Session {
   collaborator  Boolean?  @default(false)
   emailVerified Boolean?  @default(false)
 }
+
+model RoasteryProduct {
+  id               String      @id
+  shopifyProductId String      
+  shop             String
+  @@unique([shopifyProductId, shop], name: "shopify_product_id_shop")
+}
